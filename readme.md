@@ -19,6 +19,8 @@ php artisan migrate `
 `# Ejecutar servidor local
 php artisan serve`
 
+comando git
+
 
 # Ejecutar con Docker
 
