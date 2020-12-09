@@ -23,9 +23,9 @@ class ProveedorController extends Controller
 
     }
 
-    public function listarTodosLosInsumos(){
+    public function listarTodosLosProveedores(){
         $proveedores = ProveedorModel::all();
-        return view('listadoProveedores', ['proveedores' => $proveedores]);
+        return view('listadoproveedores', ['proveedores' => $proveedores]);
 
     }
 }

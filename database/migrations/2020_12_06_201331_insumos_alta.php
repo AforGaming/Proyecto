@@ -17,7 +17,6 @@ class InsumosAlta extends Migration
             $table->bigIncrements('id');
             $table->string("modelo");
             $table->string("categoria");
-            $table->string("proveedor");
             $table->timestamps();
         });
     }

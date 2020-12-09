@@ -32,7 +32,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/alta', function () {
     return view('alta');
-});//->middleware('autenticacion');
+})->middleware('autenticacion');
 
 Route::get('/insumosalta', function () {
     return view('insumosalta');
@@ -42,7 +42,7 @@ Route::get('/clientesalta', function () {
     return view('clientesalta');
 });
 
-Route::get('/comprasaltaa', 'ComprasController@listarIsnumosClientes');
+Route::get('/comprasaltaa', 'ComprasController@listarCategoriasClientes');
 
 Route::get('/comprasalta', function () {
     return view('comprasalta');
@@ -56,6 +56,11 @@ Route::get('/categoriasalta', function () {
     return view('categoriasalta');
 });
 
+Route::get('/ventasaltaa', 'VentasController@listarInsumos');
+
+Route::get('/ventasalta', function () {
+    return view('ventasalta');
+});
 
 Route::get('/modificacion/{id}', 'PersonaController@listarPersonaParaModificar') ;
 Route::get('/baja/{id}', 'PersonaController@listarPersonaParaEliminar') ;
@@ -78,9 +83,13 @@ Route::post('/comprasAltaArticulo', 'ComprasController@agregarCompra');
 Route::get('/listadoCompras', 'ComprasController@listarTodasLasCompras');
 
 Route::post('/proveedoresalta', 'ProveedorController@agregarProveedor');
+Route::get('/listadoProveedores', 'ProveedorController@listarTodosLosProveedores');
 
 
 Route::post('/categoriasalta', 'CategoriaController@agregarCategoria');
 Route::get('/listadoCategorias', 'CategoriaController@listarTodasLasCategorias');
+
+Route::post('/ventasalta', 'VentasController@agregarVenta');
+Route::get('/listadoVentas', 'VentasController@listarTodasLasVentas');
 
 

@@ -11,21 +11,21 @@
     
     @csrf
 
-
-    <select name=modelo>
-        @isset($insumos)            
-        @foreach ($insumos as $insumo)
-            <option value="{{ $insumo-> id}}">{{ $insumo-> modelo}} </option>
+    Categoria:
+    <select name=categoria>
+        @isset($categorias)            
+        @foreach ($categorias as $categoria)
+            <option value="{{ $categoria-> nombre}}">{{ $categoria-> nombre}} </option>
         @endforeach
     </select> <br />
     @endisset
-    Codigo: <input type="text" name=codigo /> <br />
-    Cantidad: <input type="text" name=cantidad /> <br />
+    Proveedor:
     <select name=rut>
         @foreach ($clientes as $cliente)
             <option value="{{ $cliente-> rut}}">{{ $cliente-> nombre}} </option>
         @endforeach
     </select> <br />
+    Modelo: <input type="text" name=modelo /> <br />
     Fecha de compra: <input type="text" name=fechacompra /> <br />
     Importe: <input type="text" name=importe /> <br />
     <input type="submit" />   

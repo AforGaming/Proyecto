@@ -7,29 +7,33 @@ use App\InsumosModel;
 use Closure;
 use App\ComprasModel;
 use App\ClientesModel;
+use App\CategoriaModel;
 
 class ComprasController extends Controller
 {
     public function agregarCompra(Request $request){
         $p = new ComprasModel;
+        $i = new InsumosModel;
+    
+        $i -> modelo = $request->get('modelo');
+        $i -> categoria = $request->get('categoria');
+        $i -> save();
 
-        $p -> modelo = $request->get('modelo');
-        $p -> codigo = $request->input('codigo');
-        $p -> cantidad = $request->input('cantidad');
         $p -> rut = $request->input('rut');
+        $p -> modelo = $request->input('modelo');
         $p -> fechacompra = $request->input('fechacompra');
         $p -> importe = $request->input('importe');
         $p -> save();
         
-        $creado = self::listarIsnumosClientes();
+        $creado = self::listarCategoriasClientes();
 
         return $creado;
     }
 
-    public function listarIsnumosClientes(){
-        $insumos = InsumosModel::all();
+    public function listarCategoriasClientes(){
+        $categorias = CategoriaModel::all();
         $clientes = ClientesModel::all();
-        return view('comprasalta', ['insumos' => $insumos],['clientes' => $clientes]);
+        return view('comprasalta', ['categorias' => $categorias],['clientes' => $clientes]);
 
     }
 

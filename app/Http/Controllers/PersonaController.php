@@ -77,12 +77,12 @@ class PersonaController extends Controller
 
     }
 
-    public function autenticarPersona(Request $request,Closure $next){
+    public function autenticarPersona(Request $request){
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('alta');
         }
         else{
             return view('login',['error' => "true"]);

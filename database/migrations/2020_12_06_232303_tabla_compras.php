@@ -14,9 +14,8 @@ class TablaCompras extends Migration
     public function up()
     {
         Schema::create('compras_models', function (Blueprint $table) {
-            $table->string('codigo');
-            $table->string("modelo");
-            $table->string("cantidad");
+            $table->bigIncrements('nroCompra');
+            $table->string('modelo');
             $table->string("rut");
             $table->string("fechaCompra");
             $table->string("importe");

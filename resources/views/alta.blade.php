@@ -1,10 +1,10 @@
 @include('templates/header')
 
 
-    <h1>Alta de Persona</h1>
+    <h1>Alta de Empleado</h1>
     
     @isset($creado)
-        <h2>Usuario creado</h2>
+        <h2>Empleado creado</h2>
     @endisset
 
     <form action="/alta" method="post">
