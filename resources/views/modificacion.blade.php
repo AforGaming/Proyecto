@@ -17,7 +17,7 @@
             Ci: <input type="text" name=ci value={{ $persona->ci }} /> <br />
             Nombre: <input type="text" name=nombre value={{ $persona->nombre  }} /> <br />
             Apellido: <input type="text" name=apellido value={{ $persona->apellido }} /> <br />
-            Mail: <input type="text" name=mail value={{ $persona->mail }} readonly /> <br />
+            Mail: <input type="text" name=mail value={{ $persona->mail }} /> <br />
             fechaIngreso: <input type="text" name=fechaIngreso value={{ $persona->fechaIngreso }} /> <br />
             fechaNacimiento: <input type="text" name=fechaNacimiento value={{ $persona->fechaNacimiento }} /> <br />
             Localidad: <input type="text" name=localidad value={{ $persona->localidad }} /> <br />

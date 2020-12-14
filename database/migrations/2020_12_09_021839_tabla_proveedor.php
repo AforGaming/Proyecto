@@ -24,4 +24,9 @@ class TablaProveedor extends Migration
         });
     }
 
+    public function down()
+    {
+        Schema::dropIfExists('proveedor_models');
+    }
+
 }

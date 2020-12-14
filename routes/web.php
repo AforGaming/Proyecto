@@ -81,9 +81,17 @@ Route::get('/listadoClientes', 'ClientesController@listarTodosLosClientes');
 
 Route::post('/comprasAltaArticulo', 'ComprasController@agregarCompra');
 Route::get('/listadoCompras', 'ComprasController@listarTodasLasCompras');
+Route::get('/comprasmod/{id}', 'ComprasController@listarCompraParaModificar') ;
+Route::get('/comprasbaja/{id}', 'ComprasController@listarCompraParaEliminar') ;
+Route::post('/comprasbaja', 'ComprasController@eliminarCompra');
+Route::post('/comprasmod', 'ComprasController@modificarCompra') ;
 
 Route::post('/proveedoresalta', 'ProveedorController@agregarProveedor');
 Route::get('/listadoProveedores', 'ProveedorController@listarTodosLosProveedores');
+Route::get('/proveedoresmod/{id}', 'ProveedorController@listarProveedorParaModificar') ;
+Route::get('/proveedoresbaja/{id}', 'ProveedorController@listarProveedorParaEliminar') ;
+Route::post('/proveedoresbaja', 'ProveedorController@eliminarProveedor');
+Route::post('/proveedoresmod', 'ProveedorController@modificarProveedor') ;
 
 
 Route::post('/categoriasalta', 'CategoriaController@agregarCategoria');

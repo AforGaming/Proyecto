@@ -6,7 +6,8 @@
     @foreach ($compras as $compra)
 
 
-    <b> NroCompra: {{ $compra-> nroCompra}} | Modelo: {{ $compra-> modelo}} | Id de Proveedor: {{ $compra-> idProv}} | Fecha de compra: {{ $compra-> fechaCompra}} | Importe: {{ $compra-> importe}} </b> <br />
+    <b> NroCompra: {{ $compra-> id}} | Modelo: {{ $compra-> modelo}} | Id de Proveedor: {{ $compra-> idProv}} | Fecha de compra: {{ $compra-> fechaCompra}} | Importe: {{ $compra-> importe}}
+    <a href="/comprasmod/{{ $compra-> id}}"> Modificar </a> <a href="/comprasbaja/{{ $compra-> id}}"> Eliminar </a> </b> <br />
 
     @endforeach
 

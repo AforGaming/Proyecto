@@ -13,11 +13,16 @@ class VentasController extends Controller
     public function agregarVenta(Request $request){
         $p = new VentasModel;
 
+
+        
+
         $p -> idProducto = $request->input('idProducto');
         $p -> fechaVenta = $request->input('fechaVenta');
         $p -> idEmpleado = $request->input('idEmpleado');
         $p -> importe = $request->input('importe');
         $p -> save();
+
+
 
         $creado = self::listarInsumos();
 

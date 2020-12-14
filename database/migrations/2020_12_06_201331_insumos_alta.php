@@ -21,12 +21,11 @@ class InsumosAlta extends Migration
         });
     }
 
-}
+    public function down()
+    {
+        Schema::dropIfExists('insumos_models');
+    }
 
-/**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+}
    
 

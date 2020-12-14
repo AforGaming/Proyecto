@@ -39,7 +39,7 @@
               <a class="nav-link" href="/listadoInsumos">Insumos</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/listadoClientes">Proveedores</a>
+              <a class="nav-link" href="/listadoProveedores">Proveedores</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/listadoCompras">Compras</a>

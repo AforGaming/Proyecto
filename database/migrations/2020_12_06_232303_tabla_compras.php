@@ -14,13 +14,18 @@ class TablaCompras extends Migration
     public function up()
     {
         Schema::create('compras_models', function (Blueprint $table) {
-            $table->bigIncrements('nroCompra');
+            $table->bigIncrements('id');
             $table->string('modelo');
             $table->string("idProv");
             $table->string("fechaCompra");
             $table->string("importe");
             $table->timestamps();
         });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('compras_models');
     }
 
 }

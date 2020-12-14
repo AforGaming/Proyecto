@@ -23,4 +23,9 @@ class TablaVentas extends Migration
         });
     }
 
+    public function down()
+    {
+        Schema::dropIfExists('venta_models');
+    }
+
 }
