@@ -19,7 +19,7 @@ class ComprasController extends Controller
         $i -> categoria = $request->get('categoria');
         $i -> save();
 
-        $p -> rut = $request->input('rut');
+        $p -> idProv = $request->input('idProv');
         $p -> modelo = $request->input('modelo');
         $p -> fechacompra = $request->input('fechacompra');
         $p -> importe = $request->input('importe');

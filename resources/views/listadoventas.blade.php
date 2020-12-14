@@ -6,7 +6,7 @@
     @foreach ($ventas as $venta)
 
 
-    <b> Nro de Venta: {{ $venta-> nroVenta}} | id Producto: {{ $venta-> idProducto}} | Fehca de Venta: {{ $venta-> fechaVenta}} | Importe: {{ $venta-> importe}} </b> <br />
+    <b> Nro de Venta: {{ $venta-> nroVenta}} | id Producto: {{ $venta-> idProducto}} | Fehca de Venta: {{ $venta-> fechaVenta}} | Empleado: {{ $venta-> idEmpleado}} | Importe: {{ $venta-> importe}} </b> <br />
 
     @endforeach
 

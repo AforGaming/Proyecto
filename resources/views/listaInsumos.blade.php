@@ -2,7 +2,6 @@
 
 <h1>Lista de Insumos</h1>
 
-<b><a href=/insumosalta>Agregar nuevo Insumo</a></b> <br /> <br />
     @foreach ($insumos as $p)
 
 

@@ -64,9 +64,13 @@ class PersonaController extends Controller
     public function modificarPersona(Request $request){
         $p = PersonaModel::find($request->input('id'));
 
+        $p->ci = $request->input('ci');
         $p->nombre = $request->input('nombre');
         $p->apellido = $request->input('apellido');
         $p->mail = $request->input('mail');
+        $p->fechaIngreso = $request->input('fechaIngreso');
+        $p->fechaNacimiento = $request->input('fechaNacimiento');
+        $p->localidad = $request->input('localidad');
 
         $modificado = $request->input('id');
 

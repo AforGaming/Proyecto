@@ -20,9 +20,9 @@
     </select> <br />
     @endisset
     Proveedor:
-    <select name=rut>
+    <select name=idProv>
         @foreach ($clientes as $cliente)
-            <option value="{{ $cliente-> rut}}">{{ $cliente-> nombre}} </option>
+            <option value="{{ $cliente-> id}}">{{ $cliente-> nombre}} </option>
         @endforeach
     </select> <br />
     Modelo: <input type="text" name=modelo /> <br />

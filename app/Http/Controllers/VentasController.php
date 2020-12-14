@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\VentasModel;
 use App\InsumosModel;
+use App\PersonaModel;
 use Closure;
 
 class VentasController extends Controller
@@ -14,6 +15,7 @@ class VentasController extends Controller
 
         $p -> idProducto = $request->input('idProducto');
         $p -> fechaVenta = $request->input('fechaVenta');
+        $p -> idEmpleado = $request->input('idEmpleado');
         $p -> importe = $request->input('importe');
         $p -> save();
 
@@ -24,7 +26,8 @@ class VentasController extends Controller
 
     public function listarInsumos(){
         $insumos = InsumosModel::all();
-        return view('ventasalta', ['insumos' => $insumos]);
+        $empleados = PersonaModel::all();
+        return view('ventasalta', ['insumos' => $insumos],['empleados' => $empleados]);
 
     }
 

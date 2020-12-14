@@ -16,6 +16,7 @@ class TablaVentas extends Migration
         Schema::create('venta_models', function (Blueprint $table) {
             $table->bigIncrements('nroVenta');
             $table->String('idProducto');
+            $table->String('idEmpleado');
             $table->String('fechaVenta');
             $table->String('importe');
             $table->timestamps();

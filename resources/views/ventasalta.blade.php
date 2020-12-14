@@ -19,6 +19,15 @@
         @endforeach
     </select> <br />
     @endisset
+    Empleado:
+    <select name=ci>
+        @isset($empleados)            
+        @foreach ($empleados as $empleado)
+            <option value="{{ $empleado-> id}}">{{ $empleado-> ci}} </option> 
+        @endforeach
+    </select> <br />
+    @endisset
+    @endauth
     Fecha de Venta: <input type="text" name=fechaVenta /> <br />
     Importe: <input type="text" name=importe /> <br />
     <input type="submit" />   

@@ -6,7 +6,7 @@
     @foreach ($compras as $compra)
 
 
-    <b> NroCompra: {{ $compra-> nroCompra}} | Modelo: {{ $compra-> modelo}} | RUT: {{ $compra-> rut}} | Fecha de compra: {{ $compra-> fechaCompra}} | Importe: {{ $compra-> importe}} </b> <br />
+    <b> NroCompra: {{ $compra-> nroCompra}} | Modelo: {{ $compra-> modelo}} | Id de Proveedor: {{ $compra-> idProv}} | Fecha de compra: {{ $compra-> fechaCompra}} | Importe: {{ $compra-> importe}} </b> <br />
 
     @endforeach
 
