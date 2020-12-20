@@ -15,10 +15,11 @@ class CreatePersonaModelsTable extends Migration
     {
         Schema::create('persona_models', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("ci");
+            $table->string("ci")->unique();
             $table->string("nombre");
             $table->string("apellido");
-            $table->string("mail");
+            $table->string("mail")->unique();
+            $table->string("celular");
             $table->string("fechaIngreso");
             $table->string("fechaNacimiento");
             $table->string("localidad");

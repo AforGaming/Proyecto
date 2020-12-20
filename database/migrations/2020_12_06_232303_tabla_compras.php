@@ -15,11 +15,15 @@ class TablaCompras extends Migration
     {
         Schema::create('compras_models', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('modelo');
+            $table->string('idProducto');
             $table->string("idProv");
-            $table->string("fechaCompra");
+            $table->string("Cantidad");
             $table->string("importe");
-            $table->timestamps();
+            $table->string('dia');
+            $table->string('mes');
+            $table->string('anio');
+            $table->timestamp('created_at')->useCurrent();;
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

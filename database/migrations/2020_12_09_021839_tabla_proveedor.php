@@ -15,7 +15,7 @@ class TablaProveedor extends Migration
     {
         Schema::create('proveedor_models', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("rut");
+            $table->string("rut")->unique();
             $table->string("nombre");
             $table->string("dirFacturacion");
             $table->string("mail");

@@ -15,7 +15,7 @@
     <select name=idProducto>
         @isset($insumos)            
         @foreach ($insumos as $insumo)
-            <option value="{{ $insumo-> id}}">{{ $insumo-> id}} </option> 
+            <option value="{{ $insumo-> id}}">{{ $insumo-> modelo}} | ${{ $insumo-> precioVenta}} </option> 
         @endforeach
     </select> <br />
     @endisset
@@ -27,8 +27,7 @@
         @endforeach
     </select> <br />
     @endisset
-    Fecha de Venta: <input type="text" name=fechaVenta /> <br />
-    Importe: <input type="text" name=importe /> <br />
+    Cantidad: <input type="number" name=cantidad /> <br />
     <input type="submit" />   
     </form>
 

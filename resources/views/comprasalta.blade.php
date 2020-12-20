@@ -11,11 +11,11 @@
     
     @csrf
 
-    Categoria:
-    <select name=categoria>
-        @isset($categorias)            
-        @foreach ($categorias as $categoria)
-            <option value="{{ $categoria-> nombre}}">{{ $categoria-> nombre}} </option>
+    Producto:
+    <select name=idProducto>
+        @isset($productos)            
+        @foreach ($productos as $producto)
+            <option value="{{ $producto-> id}}">{{ $producto-> modelo}} | ${{ $producto-> precioCompra}} </option>
         @endforeach
     </select> <br />
     @endisset
@@ -25,9 +25,7 @@
             <option value="{{ $cliente-> id}}">{{ $cliente-> nombre}} </option>
         @endforeach
     </select> <br />
-    Modelo: <input type="text" name=modelo /> <br />
-    Fecha de compra: <input type="text" name=fechacompra /> <br />
-    Importe: <input type="text" name=importe /> <br />
+    Cantidad: <input type="number" name=cantidad /> <br />
     <input type="submit" />   
     </form>
 

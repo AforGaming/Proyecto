@@ -42,10 +42,14 @@ class PersonaController extends Controller
         $p -> nombre = $request->input('nombre');
         $p -> apellido = $request->input('apellido');
         $p -> mail = $request->input('mail');
+        $p -> celular = $request->input('celular');
         $p -> fechaIngreso = $request->input('fechaIngreso');
         $p -> fechaNacimiento = $request->input('fechaNacimiento');
         $p -> localidad = $request->input('localidad');
+
+        
         $p -> save();
+        
 
         $creado = true;
         return view('alta', ['creado' => $creado]);
@@ -68,6 +72,7 @@ class PersonaController extends Controller
         $p->nombre = $request->input('nombre');
         $p->apellido = $request->input('apellido');
         $p->mail = $request->input('mail');
+        $p->mail = $request->input('celular');
         $p->fechaIngreso = $request->input('fechaIngreso');
         $p->fechaNacimiento = $request->input('fechaNacimiento');
         $p->localidad = $request->input('localidad');

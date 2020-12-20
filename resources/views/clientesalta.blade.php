@@ -13,6 +13,7 @@
 
     RUT: <input type="text" name=rut /> <br />
     Nombre: <input type="text" name=nombre /> <br />
+    Mail: <input type="text" name=mail /> <br />
     Direccion de Facturacion: <input type="text" name=dirFacturacion /> <br />
     Direccion Fisica: <input type="text" name=dirFisica /> <br />
     <input type="submit" />   

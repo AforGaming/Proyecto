@@ -14,12 +14,19 @@ class TablaCliente extends Migration
     public function up()
     {
         Schema::create('clientes_models', function (Blueprint $table) {
-            $table->string('rut');
+            $table->bigIncrements('id');
+            $table->string("rut")->unique();
             $table->string("nombre");
             $table->string("dirFacturacion");
+            $table->string("mail");
             $table->string("dirFisica");
             $table->timestamps();
         });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('clientes_models');
     }
 
 }

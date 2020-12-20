@@ -14,16 +14,36 @@ class ComprasController extends Controller
 {
     public function agregarCompra(Request $request){
         $p = new ComprasModel;
-        $i = new InsumosModel;
-    
-        $i -> modelo = $request->get('modelo');
-        $i -> categoria = $request->get('categoria');
+        $id = $request->get('idProducto');
+        $i = InsumosModel::where('id',$id)->first();;
+
+        $c = $request->input('cantidad');
+        $int = (int)$c;
+        $ca = ($i->cantidad);
+        $cai = (int)$ca;
+        $cantidad = $cai + $int;
+        $items = (string)$cantidad;
+        $i -> cantidad = $items;
         $i -> save();
 
         $p -> idProv = $request->input('idProv');
-        $p -> modelo = $request->input('modelo');
-        $p -> fechacompra = $request->input('fechacompra');
-        $p -> importe = $request->input('importe');
+        $p -> idProducto = $request->input('idProducto');
+        $p -> Cantidad = $request->input('cantidad');
+
+        $m = $request->input('cantidad');
+        $intm = (int)$m;
+        $ma = ($i->precioCompra);
+        $mai = (int)$ma;
+        $importe = $mai * $intm;
+        $mitems = (string)$importe;
+
+        $p -> importe = $mitems;
+
+        $curTime = new \DateTime();
+        $p -> anio = $curTime->format('Y');
+        $p -> mes = $curTime->format('m');
+        $p -> dia = $curTime->format('d');
+
         $p -> save();
         
         $creado = self::listarCategoriasClientes();
@@ -31,10 +51,17 @@ class ComprasController extends Controller
         return $creado;
     }
 
-    public function listarCategoriasClientes(){
-        $categorias = CategoriaModel::all();
+    public function confirmarCompra(){
+        $productos = InsumosModel::all();
         $clientes = ProveedorModel::all();
-        return view('comprasalta', ['categorias' => $categorias],['clientes' => $clientes]);
+        return view('comprasalta', ['productos' => $productos],['clientes' => $clientes]);
+
+    }
+
+    public function listarCategoriasClientes(){
+        $productos = InsumosModel::all();
+        $clientes = ProveedorModel::all();
+        return view('comprasalta', ['productos' => $productos],['clientes' => $clientes]);
 
     }
 
@@ -46,24 +73,33 @@ class ComprasController extends Controller
 
     public function listarCompraParaModificar($id){
         $compras = ComprasModel::where('id',$id)->first();
-        $id = ($id);
-        $c = InsumosModel::where('id',$id)->first();
+        $clientes = ProveedorModel::all();
 
-        return view('comprasmod', ['compras' => $compras],['c' => $c]);
+        return view('comprasmod', ['compras' => $compras],['clientes' => $clientes]);
     }
 
-public function listarCompraParaEliminar($id){
+    public function listarCompraParaEliminar($id){
         $compras = ComprasModel::where('id',$id)->first();
-        $id = ($id);
-        $c = InsumosModel::where('id',$id)->first();
 
-        return view('comprasbaja', ['compras' => $compras],['c' => $c]);
+        return view('comprasbaja', ['compras' => $compras]);
     }
 
     public function eliminarCompra(Request $request){
         $p = ComprasModel::find($request->input('id'));
-        $c = InsumosModel::find($request->input('id'));
-        $c->delete();
+        $id = $request->get('idProducto');
+        $i = InsumosModel::where('id',$id)->first();;
+
+        $c = $request->input('cantidad');
+        $int = (int)$c;
+        $ca = ($i->cantidad);
+        $cai = (int)$ca;
+        $cantidad = $cai - $int;
+        $items = (string)$cantidad;
+        $i -> cantidad = $items;
+
+        $i -> save();
+
+
         $p->delete();
         $eliminado = $request->input('id');
         
@@ -73,17 +109,9 @@ public function listarCompraParaEliminar($id){
 
     public function modificarCompra(Request $request){
         $p = ComprasModel::find($request->input('id'));
-        $c = InsumosModel::find($request->input('id'));
-
-        $c->modelo = $request->input('modelo');
-        $c->categoria = $request->input('categoria');
-
-        $c->save();
-
-        $p->modelo = $request->input('modelo');
+    
         $p->idProv = $request->input('idProv');
-        $p->fechaCompra = $request->input('fechaCompra');
-        $p->importe = $request->input('importe');
+       
 
         $modificado = $request->input('id');
 

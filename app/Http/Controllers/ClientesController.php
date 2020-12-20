@@ -13,6 +13,7 @@ class ClientesController extends Controller
 
         $p -> rut = $request->input('rut');
         $p -> nombre = $request->input('nombre');
+        $p -> mail = $request->input('mail');
         $p -> dirFacturacion = $request->input('dirFacturacion');
         $p -> dirFisica = $request->input('dirFisica');
         $p -> save();

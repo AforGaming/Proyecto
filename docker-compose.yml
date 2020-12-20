@@ -5,6 +5,8 @@ services:
   mariadb:
     image: 'bitnami/mariadb:10.1'
     container_name: laravel_mysql
+    ports:
+      - "3308:3306"
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=laravel

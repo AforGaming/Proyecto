@@ -17,6 +17,9 @@ class InsumosAlta extends Migration
             $table->bigIncrements('id');
             $table->string("modelo");
             $table->string("categoria");
+            $table->string("precioCompra");
+            $table->string("precioVenta");
+            $table->string("cantidad")->default("0");
             $table->timestamps();
         });
     }

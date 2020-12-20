@@ -17,9 +17,13 @@ class TablaVentas extends Migration
             $table->bigIncrements('nroVenta');
             $table->String('idProducto');
             $table->String('idEmpleado');
-            $table->String('fechaVenta');
+            $table->String('cantidad');
             $table->String('importe');
-            $table->timestamps();
+            $table->string('dia');
+            $table->string('mes');
+            $table->string('anio');
+            $table->timestamp('created_at')->toDateString();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

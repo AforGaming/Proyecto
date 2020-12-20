@@ -36,21 +36,26 @@
               <a class="nav-link" href="/listado">Empleados</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/listadoInsumos">Insumos</a>
-            </li>
-            <li class="nav-item active">
               <a class="nav-link" href="/listadoProveedores">Proveedores</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/listadoCompras">Compras</a>
+              <a class="nav-link" href="/listadoClientes">Clientes</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/listadoCategorias">Categorias</a>
             </li>
             <li class="nav-item active">
+              <a class="nav-link" href="/listadoInsumos">Stock</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/listadoCompras">Compras</a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="/listadoVentas">Ventas</a>
             </li>
-
+            <li class="nav-item active">
+              <a class="nav-link" href="/ganancia">Ganancias</a>
+            </li>
           </ul>
           
         </div>

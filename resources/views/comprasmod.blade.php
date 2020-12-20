@@ -14,11 +14,10 @@
             @csrf
 
             Nro Comrpa: <input type="text" name=id value={{ $compras->id }} readonly /> <br />
-            Modelo: <input type="text" name=modelo value={{ $compras->modelo }} /> <br />
+            Producto: <input type="text" name=modelo value={{ $compras->idProducto }} readonly /> <br />
             Proveedor: <input type="text" name=idProv value={{ $compras->idProv  }} /> <br />
-            Fecha de Comrpa: <input type="text" name=fechaCompra value={{ $compras->fechaCompra }} /> <br />
-            Importe: <input type="text" name=importe value={{ $compras->importe }} /> <br />
-            Categoria: <input type="text" name=categoria value={{ $c->categoria }} /> <br />
+            Fecha de Comrpa: <input type="text" name=created_at value={{ $compras->created_at }} readonly /> <br />
+            Importe: <input type="text" name=importe value={{ $compras->importe }} readonly /> <br />
             <input type="submit"> </input>
         </form>
 

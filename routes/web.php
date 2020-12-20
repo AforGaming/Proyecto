@@ -38,6 +38,8 @@ Route::get('/insumosalta', function () {
     return view('insumosalta');
 });
 
+Route::get('/insumosaltaa', 'InsumosController@listarCategorias');
+
 Route::get('/clientesalta', function () {
     return view('clientesalta');
 });
@@ -60,6 +62,10 @@ Route::get('/ventasaltaa', 'VentasController@listarInsumos');
 
 Route::get('/ventasalta', function () {
     return view('ventasalta');
+});
+
+Route::get('/ganancia', function () {
+    return view('ganancia');
 });
 
 Route::get('/modificacion/{id}', 'PersonaController@listarPersonaParaModificar') ;
@@ -99,5 +105,10 @@ Route::get('/listadoCategorias', 'CategoriaController@listarTodasLasCategorias')
 
 Route::post('/ventasalta', 'VentasController@agregarVenta');
 Route::get('/listadoVentas', 'VentasController@listarTodasLasVentas');
+Route::get('/ventasbaja/{nroVenta}', 'VentasController@listarVentaParaEliminar');
+Route::post('/ventasbaja', 'VentasController@eliminarVenta');
 
-
+Route::get('/reportestock', 'PdfController@generarPDF');
+Route::get('/reportescompras', 'PdfController@generarPDFcompras');
+Route::get('/reportesventas', 'PdfController@generarPDFventas');
+Route::post('/reportesganancias', 'PdfController@generarPDFganancias');
